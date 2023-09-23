@@ -1,0 +1,22 @@
+{
+    "name": "tanvir/plugin",
+    "type": "library",
+    "description": "Plugin tools for Tanvir",
+    "keywords": ["plugin","tanvir"],
+    "homepage": "https://bitbucket.org/tanvirio/tanvir-plugin",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Tanvir",
+            "email": "hello@tanvir.io",
+            "homepage": "https://tanvir.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
