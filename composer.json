@@ -1,9 +1,9 @@
 {
-    "name": "tanvir/plugin",
+    "name": "tanvir10/plugin",
     "type": "library",
     "description": "Plugin tools for Tanvir",
     "keywords": ["plugin","tanvir"],
-    "homepage": "https://bitbucket.org/tanvirio/tanvir-plugin",
+    "homepage": "https://github.com/NHTanvir/plugin",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
