@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 /**
  * if accessed directly, exit.

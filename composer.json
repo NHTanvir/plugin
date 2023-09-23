@@ -1,15 +1,15 @@
 {
-    "name": "tanvir10/plugin",
+    "name": "tanvir1010/plugin",
     "type": "library",
-    "description": "Plugin tools for Tanvir",
-    "keywords": ["plugin","tanvir"],
-    "homepage": "https://github.com/NHTanvir/plugin",
+    "description": "Plugin tools for Tanvir10",
+    "keywords": ["plugin","tanvir10"],
+    "homepage": "https://github.com/NHTanvir10/plugin",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Tanvir",
-            "email": "hello@tanvir.io",
-            "homepage": "https://tanvir.io",
+            "name": "Tanvir10",
+            "email": "hello@tanvir10.io",
+            "homepage": "https://tanvir10.io",
             "role": "Developer"
         }
     ],
