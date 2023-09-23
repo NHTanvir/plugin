@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&display=swap');
-.wrap > .cx-heading {
+.wrap > .tan-heading {
     padding: 20px !important;
     background: #fff;
     margin: 20px auto !important;
@@ -8,7 +8,7 @@
     font-family: 'Chonburi', cursive;
     box-shadow: rgb(9 30 66 / 25%) 0px 8px 16px -4px, rgb(9 30 66 / 31%) 0px 0px 1px;
 }
-.cx-wrapper {
+.tan-wrapper {
     background: #fff;
     border: none;
     box-sizing: border-box;
@@ -22,14 +22,14 @@
     margin-bottom: 60px;
     overflow: hidden;
 }
-.cx-wrapper.cx-tab-left {
+.tan-wrapper.tan-tab-left {
     display: grid;
     grid-template-columns: 2fr 8fr;
 }
-.cx-wrapper.cx-sections-1 {
+.tan-wrapper.tan-sections-1 {
     grid-template-columns: inherit;
 }
-.cx-navs-wrapper {
+.tan-navs-wrapper {
     z-index: 2;
     position: relative;
     background: 0 0;
@@ -38,31 +38,31 @@
     border-radius: 0;
     line-height: inherit;
 }
-.cx-tab-left .cx-navs-wrapper {
+.tan-tab-left .tan-navs-wrapper {
     margin-top: 18px;
 }
-.cx-navs-wrapper ul,
-.cx-navs-wrapper ul li {
+.tan-navs-wrapper ul,
+.tan-navs-wrapper ul li {
     margin: 0 !important;
     padding: 0 !important;
 }
-.cx-tab-top .cx-nav-tab {
+.tan-tab-top .tan-nav-tab {
     display: inline-block;
 }
-.cx-tab-top .cx-sections-wrapper {
+.tan-tab-top .tan-sections-wrapper {
     width: 100%;
     padding-top: 30px;
 }
-.cx-navs-wrapper ul li {
+.tan-navs-wrapper ul li {
     background: 0 0;
     white-space: normal;
     list-style: none;
     width: 100 % !important;
 }
-.cx-navs-wrapper ul li:last-child {
+.tan-navs-wrapper ul li:last-child {
     border-bottom: none;
 }
-.cx-navs-wrapper ul li a {
+.tan-navs-wrapper ul li a {
     display: block;
     margin: 0;
     padding: 15px 12px;
@@ -71,15 +71,15 @@
     font-size: 12px;
     text-align: center;
 }
-.cx-field-wrap,
-.cx-label-wrap {
+.tan-field-wrap,
+.tan-label-wrap {
     line-height: 1.3;
     display: inline-block;
 }
-.cx-navs-wrapper ul li a:focus {
+.tan-navs-wrapper ul li a:focus {
     box-shadow: none;
 }
-.cx-sections-wrapper {
+.tan-sections-wrapper {
     position: relative;
     padding: 5px 16px;
     float: left;
@@ -87,16 +87,16 @@
     color: #444;
     border-left: none;
 }
-.cx-subheading {
+.tan-subheading {
     border-bottom: 1px solid #ddd;
     padding-bottom: 18px;
     padding-top: 18px;
     margin-bottom: 15px;
 }
-.cx-subheading-text {
+.tan-subheading-text {
     font-size: 1.3rem;
 }
-.cx-label-wrap {
+.tan-label-wrap {
     vertical-align: top;
     text-align: left;
     padding: 20px 10px 20px 0;
@@ -104,30 +104,30 @@
     font-weight: 400;
     font-size: 15px;
 }
-.cx-field-wrap {
+.tan-field-wrap {
     padding: 15px 10px;
     vertical-align: middle;
     width: 70% !important;
 }
-.cx-field-wrap.cx-field-wrap-nolabel {
+.tan-field-wrap.tan-field-wrap-nolabel {
     width: 100% !important;
 }
-.cx-desc {
+.tan-desc {
     color: #a7a7a7;
     font-style: italic;
 }
-.cx-row {
+.tan-row {
     border-bottom: 1px solid #f5f5f5;
 }
-.cx-row:last-child {
+.tan-row:last-child {
     border-bottom: 0px solid #fff;
 }
-.cx-tabs {
+.tan-tabs {
     display: flex;
     text-align: center;
     margin-bottom: 10px;
 }
-.cx-tab {
+.tan-tab {
     padding: 10px 20px;
     border: 1px solid #ddd;
     cursor: pointer;
@@ -137,55 +137,55 @@
     font-weight: 500;
     background: #eee;
 }
-.cx-tab:first-child {
+.tan-tab:first-child {
     margin-left: 5px;
 }
-.cx-tab:last-child {
+.tan-tab:last-child {
     border-right: 1px solid #ddd;
     margin-right: 5px;
 }
-.cx-tab.cx-tab-active {
+.tan-tab.tan-tab-active {
     border-bottom: 0px;
     background: #fff;
     margin-bottom: -1px;
     cursor: default;
 }
-.cx-tab:hover:not(.cx-tab-active) {
+.tan-tab:hover:not(.tan-tab-active) {
     color: #fff;
     cursor: pointer;
 }
-.cx-nav-tab.cx-active-tab {
+.tan-nav-tab.tan-active-tab {
     background: #626262;
     border-right: none;
 }
-.cx-label-wrap label,
-.cx-nav-tab.cx-active-tab a {
+.tan-label-wrap label,
+.tan-nav-tab.tan-active-tab a {
     color: #fff;
 }
-.cx-field-wrap .cx-field-email:not(.cx-field-group),
-.cx-field-wrap .cx-field-number:not(.cx-field-group),
-.cx-field-wrap .cx-field-password:not(.cx-field-group),
-.cx-field-wrap .cx-field-select:not(.cx-field-group),
-.cx-field-wrap .cx-field-text:not(.cx-field-group),
-.cx-field-wrap .cx-field-textarea:not(.cx-field-group),
-.cx-field-wrap .cx-field-url:not(.cx-field-group) {
+.tan-field-wrap .tan-field-email:not(.tan-field-group),
+.tan-field-wrap .tan-field-number:not(.tan-field-group),
+.tan-field-wrap .tan-field-password:not(.tan-field-group),
+.tan-field-wrap .tan-field-select:not(.tan-field-group),
+.tan-field-wrap .tan-field-text:not(.tan-field-group),
+.tan-field-wrap .tan-field-textarea:not(.tan-field-group),
+.tan-field-wrap .tan-field-url:not(.tan-field-group) {
     width: 100%;
     min-width: 100%;
 }
-select.cx-field-select:disabled {
+select.tan-field-select:disabled {
     background-image: none;
 }
-.cx-field-wrap .cx-field-group {
+.tan-field-wrap .tan-field-group {
     width: auto;
 }
-.cx-field-wrap .cx-field-file {
+.tan-field-wrap .tan-field-file {
     width: 80%;
 }
-.cx-field-wrap p {
+.tan-field-wrap p {
     margin: 0;
     font-family: inherit;
 }
-.cx-message {
+.tan-message {
     display: none;
     color: #000000;
     background-color: #d4edda;
@@ -202,24 +202,24 @@ select.cx-field-select:disabled {
     border-radius: 6px;
     box-shadow: rgb(9 30 66 / 25%) 0px 8px 16px -4px, rgb(9 30 66 / 31%) 0px 0px 1px;
 }
-.cx-message img {
+.tan-message img {
     max-height: 60px;
 }
-.cx-message p {
+.tan-message p {
     margin: 0;
 }
 .chosen-container,
 .select2-container {
     width: 100%;
 }
-.cx-nonsticky-controls {
+.tan-nonsticky-controls {
     margin: 30px auto;
     text-align: center;
 }
-.cx-nonsticky-controls .button-hero {
+.tan-nonsticky-controls .button-hero {
     margin-right: 10px;
 }
-.cx-sticky-controls {
+.tan-sticky-controls {
     width: 69%;
     background: #fff;
     position: fixed;
@@ -230,28 +230,28 @@ select.cx-field-select:disabled {
     border-top: 1px solid #ddd;
     padding: 25px 0;
 }
-.cx-subheading > .dashicons {
+.tan-subheading > .dashicons {
     color: #626262;
 }
-.cx-label-wrap label {
+.tan-label-wrap label {
     color: #626262;
 }
-.cx-field-wrap .cx-field {
+.tan-field-wrap .tan-field {
     background: #f9f9f9;
     border: 1px solid #ecebeb;
     padding: 5px 10px;
 }
-.cx-divider {
+.tan-divider {
     text-align: center;
     border-bottom: 0px;
     border-top: 0px;
     font-size: 16px;
     padding-top: 10px;
 }
-.cx-divider > span {
+.tan-divider > span {
     font-weight: 500;
 }
-.cx-sticky-controls .button-primary {
+.tan-sticky-controls .button-primary {
     background: #4caf50;
     border-color: #4caf50;
     color: #fff;
@@ -260,15 +260,15 @@ select.cx-field-select:disabled {
     padding: 8px 20px;
     border: 1px solid #57b95b;
 }
-.cx-sticky-controls .button-primary:active,
-.cx-sticky-controls .button-primary:focus,
-.cx-sticky-controls .button-primary:hover {
+.tan-sticky-controls .button-primary:active,
+.tan-sticky-controls .button-primary:focus,
+.tan-sticky-controls .button-primary:hover {
     background: #57b95b;
     border-color: #57b95b;
     border: 1px solid #57b95b;
     box-shadow: none;
 }
-.cx-sticky-controls .button.cx-reset-button {
+.tan-sticky-controls .button.tan-reset-button {
     color: #b7b7b7;
     border-color: transparent !important;
     background: 0 0 !important;
@@ -278,9 +278,9 @@ select.cx-field-select:disabled {
     padding-top: 8px;
     outline: 0;
 }
-.cx-sticky-controls .button.cx-reset-button::active,
-.cx-sticky-controls .button.cx-reset-button::focus,
-.cx-sticky-controls .button.cx-reset-button::hover {
+.tan-sticky-controls .button.tan-reset-button::active,
+.tan-sticky-controls .button.tan-reset-button::focus,
+.tan-sticky-controls .button.tan-reset-button::hover {
     background: 0 0 !important;
     background-color: transparent !important;
     border-color: transparent !important;
@@ -288,25 +288,25 @@ select.cx-field-select:disabled {
     box-shadow: none;
     outline: 0;
 }
-.cx-field-wrap input.button.cx-browse {
+.tan-field-wrap input.button.tan-browse {
     line-height: 38px;
     float: right;
 }
-.cx-heading {
+.tan-heading {
     padding-bottom: 20px !important;
 }
-.cx-repeatable {
+.tan-repeatable {
     padding-bottom: 10px;
 }
-.cx-repeatable > * {
+.tan-repeatable > * {
     margin-right: 10px;
 }
-.cx-toggle {
+.tan-toggle {
   cursor: pointer;
   display: block;
   margin-bottom: 8px;
 }
-.cx-toggle-switch {
+.tan-toggle-switch {
   display: inline-block;
   background: #ccc;
   border-radius: 16px;
@@ -316,10 +316,10 @@ select.cx-field-select:disabled {
   vertical-align: middle;
   transition: background 0.25s;
 }
-.cx-toggle-switch:before, .cx-toggle-switch:after {
+.tan-toggle-switch:before, .tan-toggle-switch:after {
   content: "";
 }
-.cx-toggle-switch:before {
+.tan-toggle-switch:before {
   display: block;
   background: linear-gradient(to bottom, #fff 0%, #eee 100%);
   border-radius: 50%;
@@ -331,29 +331,29 @@ select.cx-field-select:disabled {
   left: 4px;
   transition: left 0.25s;
 }
-.cx-toggle:hover .cx-toggle-switch:before {
+.tan-toggle:hover .tan-toggle-switch:before {
   background: linear-gradient(to bottom, #fff 0%, #fff 100%);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
-.cx-toggle-checkbox:checked + .cx-toggle-switch {
+.tan-toggle-checkbox:checked + .tan-toggle-switch {
   background: #56c080;
 }
-.cx-toggle-checkbox:checked + .cx-toggle-switch:before {
+.tan-toggle-checkbox:checked + .tan-toggle-switch:before {
   left: 30px;
 }
-.cx-toggle-checkbox {
+.tan-toggle-checkbox {
   position: absolute;
   visibility: hidden;
 }
-.cx-toggle-label {
+.tan-toggle-label {
   margin-left: 5px;
   position: relative;
   top: 2px;
 }
-.cx-row-tabs > .cx-field-wrap {
+.tan-row-tabs > .tan-field-wrap {
     padding-left: 0;
 }
-.cx-repeatable button {
+.tan-repeatable button {
     height: 32px;
     width: 32px;
     font-size: 18px;
@@ -362,25 +362,25 @@ select.cx-field-select:disabled {
     border-radius: 4px;
     transition: all 0.2s;
 }
-.cx-repeater-remove {
+.tan-repeater-remove {
     background: #d30b5c;
     border: 1px solid #d30b5c;
     color: #fff;
 }
-.cx-repeater-remove:hover {
+.tan-repeater-remove:hover {
     background: #fff;
     color: #d30b5c;
 }
-.cx-repeater-add {
+.tan-repeater-add {
     background: #4caf50;
     border: 1px solid #4caf50;
     color: #fff;
 }
-.cx-repeater-add:hover {
+.tan-repeater-add:hover {
     background: #fff;
     color: #4caf50;
 }
-#cx-overlay {
+#tan-overlay {
     position: absolute;
     left: 0;
     top: 0;
@@ -389,87 +389,87 @@ select.cx-field-select:disabled {
     right: 0;
     z-index: 9999;
 }
-#cx-overlay > img {
+#tan-overlay > img {
     position: fixed;
     left: calc(50% - 100px);
     top: 200px;
 }
 @media only screen and (max-width: 767px) {
-    .cx-wrapper {
+    .tan-wrapper {
         grid-template-columns: inherit;
     }
-    .cx-sections-wrapper {
+    .tan-sections-wrapper {
         margin-left: 0;
     }
-    .cx-label-wrap {
+    .tan-label-wrap {
         width: 100%;
     }
-    .cx-field-wrap {
+    .tan-field-wrap {
         width: 100% !important;
         padding-left: 0;
         padding-top: 0;
         padding-bottom: 0;
     }
-    .cx-field-wrap .cx-field-file {
+    .tan-field-wrap .tan-field-file {
         width: 53%;
     }
-    .cx-nav-label {
+    .tan-nav-label {
         display: none;
         font-weight: 400;
         font-size: 15px;
         padding-left: 5px !important;
     }
-    .cx-navs-wrapper ul {
+    .tan-navs-wrapper ul {
         text-align: center;
     }
-    .cx-navs-wrapper ul li {
+    .tan-navs-wrapper ul li {
         display: inline-block;
     }
-    .cx-navs-wrapper ul li a {
+    .tan-navs-wrapper ul li a {
         text-align: center;
         padding: 10px;
     }
-    .cx-sticky-controls {
+    .tan-sticky-controls {
         width: 100%;
         text-align: center;
     }
-    .cx-field-wrap input.button.cx-browse {
+    .tan-field-wrap input.button.tan-browse {
         padding: 0 12px;
     }
-    .cx-sidebar-wrapper {
+    .tan-sidebar-wrapper {
         display: none;
     }
 }
 @media only screen and (min-width: 768px) {
-    .cx-sections-wrapper {
+    .tan-sections-wrapper {
         margin-left: 20px;
     }
-    .cx-label-wrap {
+    .tan-label-wrap {
         width: 25%;
     }
-    .cx-field-wrap {
+    .tan-field-wrap {
         padding: 15px 10px;
         width: 67% !important;
     }
-    .cx-field-wrap .cx-field-file {
+    .tan-field-wrap .tan-field-file {
         width: 65%;
     }
-    .cx-nav-label {
+    .tan-nav-label {
         display: none;
         font-weight: 400;
         font-size: 15px;
     }
-    .cx-navs-wrapper {
+    .tan-navs-wrapper {
     }
-    .cx-field-wrap input.button.cx-browse {
+    .tan-field-wrap input.button.tan-browse {
         padding: 0 10px;
     }
-    .cx-sticky-controls .button-primary {
+    .tan-sticky-controls .button-primary {
         padding: 4px 20px;
     }
 }
 @media only screen and (min-width: 900px) {
-    .cx-sticky-controls {
+    .tan-sticky-controls {
         left: 160px;
         width: calc(100% - 160px);
         position: fixed;
@@ -477,36 +477,36 @@ select.cx-field-select:disabled {
     }
 }
 @media only screen and (min-width: 1200px) {
-    .cx-sections-wrapper {
+    .tan-sections-wrapper {
     }
-    .cx-field-wrap .cx-field-file {
+    .tan-field-wrap .tan-field-file {
         width: 80%;
     }
-    .cx-nav-label {
+    .tan-nav-label {
         display: unset;
         font-weight: 400;
         font-size: 15px;
     }
-    .cx-navs-wrapper {
+    .tan-navs-wrapper {
     }
-    .cx-navs-wrapper ul li a {
+    .tan-navs-wrapper ul li a {
         text-align: left;
         padding: 15px 12px;
     }
-    .cx-field-wrap input.button.cx-browse {
+    .tan-field-wrap input.button.tan-browse {
         padding: 0 16px;
     }
-    .cx-sidebar-wrapper {
+    .tan-sidebar-wrapper {
         display: block;
     }
-    .cx-sticky-controls .button-primary {
+    .tan-sticky-controls .button-primary {
         padding: 8px 20px;
     }
 }
 @media only screen and (min-width: 1367px) {
-    .cx-navs-wrapper {
+    .tan-navs-wrapper {
     }
-    .cx-field-wrap input.button.cx-browse {
+    .tan-field-wrap input.button.tan-browse {
         padding: 0 40px;
     }
 }

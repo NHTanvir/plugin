@@ -1,53 +1,53 @@
-.cx-setup.wp-core-ui.cx-wizard-body-panel {
+.tan-setup.wp-core-ui.tan-wizard-body-panel {
 	background: #f0f0f0;
 	font-family: sans-serif;
 }
-.cx-wizard-wrap {
+.tan-wizard-wrap {
     padding: 5px 0 40px 0;
     width: 800px;
     margin: 0 auto;
     max-width: 100%;
 }
-.cx-wizard-container {
+.tan-wizard-container {
 	margin: auto;
 	background: #fff;
 	padding: 24px;
 	border-radius: 3px;
 	box-shadow: rgb(9 30 66 / 25%) 0px 8px 16px -4px, rgb(9 30 66 / 31%) 0px 0px 1px;
 }
-.cx-setup.wp-core-ui.cx-wizard-body-panel {
+.tan-setup.wp-core-ui.tan-wizard-body-panel {
 	background: #f1f1f1;
 	justify-content: center;
 	align-items: center;
 }
-.cx-wizard-heading {
+.tan-wizard-heading {
 	text-align: center;
 	color: #4b4c4e;
 }
-.cx-wizard-heading.hide_title {
+.tan-wizard-heading.hide_title {
 	display: none;
 }
-.cx-wizard-heading a{
+.tan-wizard-heading a{
 	color: #000;
 	text-decoration: none;
 }
-.cx-wizard-icon {
+.tan-wizard-icon {
 	max-height: 32px;
 }
 /*Step design start*/
-.cx-wizard-stepper-wrapper {
+.tan-wizard-stepper-wrapper {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.cx-wizard-stepper-item {
+.tan-wizard-stepper-item {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
 }
-.cx-wizard-stepper-item::before {
+.tan-wizard-stepper-item::before {
   position: absolute;
   content: "";
   border-bottom: 4px solid #ccc;
@@ -56,10 +56,10 @@
   left: 0;
   z-index: 2;
 }
-.cx-wizard-stepper-item.passed-step::before {
+.tan-wizard-stepper-item.passed-step::before {
   border-bottom: 4px solid #35bca2;
 }
-.cx-wizard-stepper-item::after {
+.tan-wizard-stepper-item::after {
   position: absolute;
   content: "";
   border-bottom: 4px solid #ccc;
@@ -68,7 +68,7 @@
   left: 50%;
   z-index: 2;
 }
-.cx-wizard-stepper-item .cx-wizard-step-counter {
+.tan-wizard-stepper-item .tan-wizard-step-counter {
     position: relative;
     z-index: 5;
     display: flex;
@@ -81,20 +81,20 @@
     margin-bottom: 6px;
     margin-top: 9px;
 }
-.cx-wizard-stepper-item.current-step {
+.tan-wizard-stepper-item.current-step {
   font-weight: bold;
 }
-.cx-wizard-stepper-item .cx-wizard-step-counter {
+.tan-wizard-stepper-item .tan-wizard-step-counter {
     background-color: #fff;
     color: #cccccc;
     border: 4px solid #cccccc;
 }
-.cx-wizard-stepper-item.passed-step .cx-wizard-step-counter {
+.tan-wizard-stepper-item.passed-step .tan-wizard-step-counter {
 	background-color: #fff;
 	color: #fff;
 	border: 4px solid #35bca2;
 }
-.cx-wizard-stepper-item.passed-step::after {
+.tan-wizard-stepper-item.passed-step::after {
 	position: absolute;
 	content: "";
 	border-bottom: 4px solid #35bca2;
@@ -103,24 +103,24 @@
 	left: 0;
 	z-index: 3;
 }
-.cx-wizard-stepper-item:first-child::before {
+.tan-wizard-stepper-item:first-child::before {
   content: none;
 }
-.cx-wizard-stepper-item:last-child::after {
+.tan-wizard-stepper-item:last-child::after {
   content: none;
 }
-.cx-wizard-step-name a {
+.tan-wizard-step-name a {
     text-decoration: none;
     font-weight: bold;
     color: #bdbdbd;
 }
-.passed-step .cx-wizard-step-name a {
+.passed-step .tan-wizard-step-name a {
     color: #00b492;
 }
 /*Step design end*/
 
 /*Footer button style start*/
-.cx-wizard-btns {
+.tan-wizard-btns {
 	width: 500px;
 	margin: auto;
 	display: flex;
@@ -129,7 +129,7 @@
 	gap: 20px;
 	padding-top: 30px;
 }
-.cx-wizard-btn {
+.tan-wizard-btn {
 	vertical-align: baseline;
 	color: #2271b1;
 	border-color: #2271b1;
@@ -150,23 +150,23 @@
 	box-sizing: border-box;
 	font-weight: 500;
 }
-.cx-wizard-btn.btn-primary {
+.tan-wizard-btn.btn-primary {
 	    background: #2271b1;
     border-color: #2271b1;
     color: #fff;
     text-decoration: none;
     text-shadow: none;
 }
-.cx-wizard-btn.btn-hero {
+.tan-wizard-btn.btn-hero {
 	font-size: 14px;
 	min-height: 46px;
 	line-height: 3.14285714;
 	padding: 0 34px;
 }
-button.cx-wizard-btn {
+button.tan-wizard-btn {
 	font-weight: 400;
 }
-.cx-wizard-btn.disabled {
+.tan-wizard-btn.disabled {
 	/*display: none;*/
 }
 /*Footer button style end*/

@@ -153,7 +153,7 @@ class Update {
 	}
 
 	public function init() {
-		if( isset( $_GET['cx-recheck'] ) && $_GET['cx-recheck'] == $this->slug ) {
+		if( isset( $_GET['tan-recheck'] ) && $_GET['tan-recheck'] == $this->slug ) {
 			$_transient = get_option( '_site_transient_update_plugins' );
 			unset( $_transient->checked[ "{$this->slug}/{$this->slug}.php" ] );
 			unset( $_transient->response[ "{$this->slug}/{$this->slug}.php" ] );
@@ -164,7 +164,7 @@ class Update {
 	public function plugin_row_meta( $plugin_meta, $plugin_file ) {
 		
 		if ( $this->basename === $plugin_file ) {
-			$plugin_meta['check'] = '<a href="' . add_query_arg( 'cx-recheck', $this->slug, admin_url( 'plugins.php' ) ) . '">' . __( 'Check for update', 'tanvir10' ) . '</a>';
+			$plugin_meta['check'] = '<a href="' . add_query_arg( 'tan-recheck', $this->slug, admin_url( 'plugins.php' ) ) . '">' . __( 'Check for update', 'tanvir10' ) . '</a>';
 		}
 
 		return $plugin_meta;

@@ -1,14 +1,14 @@
-.notice.cx-notice {
+.notice.tan-notice {
     padding: 5px 15px;
     border-width: 0 0 0 4px;
 }
-.cx-shadow {
+.tan-shadow {
     transition: all 0.3s;
 }
-.cx-shadow:hover {
+.tan-shadow:hover {
     box-shadow: rgb(9 30 66 / 25%) 0px 8px 16px -4px, rgb(9 30 66 / 31%) 0px 0px 1px;
 }
-.cx-notice h3 {
+.tan-notice h3 {
     padding: 0;
     margin: 7px 0;
     font-weight: normal;
@@ -16,6 +16,6 @@
     border-bottom: 1px dashed #e6195a50;
     padding-bottom: 5px;
 }
-.cx-notice p {
+.tan-notice p {
     font-size: 14px;
 }

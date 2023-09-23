@@ -34,18 +34,18 @@ class Deactivator extends Base {
 
 		$this->action( 'admin_footer', 'deactivation_survey_modal', 99 );
 
-		if( did_action( 'cx-plugin-deactivation' ) ) return;
-		do_action( 'cx-plugin-deactivation' );
+		if( did_action( 'tan-plugin-deactivation' ) ) return;
+		do_action( 'tan-plugin-deactivation' );
 
 		$this->action( 'admin_enqueue_scripts', 'enqueue_scripts', 99 );
-		$this->priv( 'cx-plugin-deactivation', 'send_deactivation_survey', 99 );
+		$this->priv( 'tan-plugin-deactivation', 'send_deactivation_survey', 99 );
 	}
 
 	public function enqueue_scripts( $screen ) {
 		if ( get_current_screen()->base != 'plugins' )return;
 
-        wp_enqueue_style( "cx-plugin-deactivator", plugins_url( 'assets/css/deactivator.css', __FILE__ ), [], '' );
-        wp_enqueue_script( "cx-plugin-deactivator", plugins_url( 'assets/js/deactivator.js', __FILE__ ), [ 'jquery' ], '', true );
+        wp_enqueue_style( "tan-plugin-deactivator", plugins_url( 'assets/css/deactivator.css', __FILE__ ), [], '' );
+        wp_enqueue_script( "tan-plugin-deactivator", plugins_url( 'assets/js/deactivator.js', __FILE__ ), [ 'jquery' ], '', true );
     }
 
 	public function deactivation_survey_modal()	{
@@ -55,41 +55,41 @@ class Deactivator extends Base {
 			jQuery(function($){
 				$(document).on( 'click', 'tr[data-slug="<?php echo $this->slug; ?>"] .deactivate a', function(e){
 					e.preventDefault()
-					$('.cx-plugin-deactivation-survey-overlay').css('display', 'flex');
-					$('.cx-plugin-dsm-skip-btn').prop('href', $(this).attr('href'));
-					$('#cxd-plugin-name').val( "<?php echo $this->slug; ?>" );
+					$('.tan-plugin-deactivation-survey-overlay').css('display', 'flex');
+					$('.tan-plugin-dsm-skip-btn').prop('href', $(this).attr('href'));
+					$('#tand-plugin-name').val( "<?php echo $this->slug; ?>" );
 				} )
 			})
 		</script>
 		<?php
 
-		if( did_action( 'cx-plugin-deactivation-modal' ) ) return;
-		do_action( 'cx-plugin-deactivation-modal' );
+		if( did_action( 'tan-plugin-deactivation-modal' ) ) return;
+		do_action( 'tan-plugin-deactivation-modal' );
 		
 		$user = wp_get_current_user();
 		?>
-		<div class="cx-plugin-deactivation-survey-overlay">
-			<div class="cx-plugin-deactivation-survey-modal">
-				<div class="cx-plugin-deactivation-survey-form">
-					<form method="post" class="cx-plugin-deactivation-survey-form">
+		<div class="tan-plugin-deactivation-survey-overlay">
+			<div class="tan-plugin-deactivation-survey-modal">
+				<div class="tan-plugin-deactivation-survey-form">
+					<form method="post" class="tan-plugin-deactivation-survey-form">
 						<input type="hidden" name="first_name" value="<?php echo $user->first_name ?>">
 						<input type="hidden" name="last_name" value="<?php echo $user->last_name ?>">
 						<input type="hidden" name="user_email" value="<?php echo $user->user_email ?>">
-						<input type="hidden" name="plugin" value="" id="cxd-plugin-name">
+						<input type="hidden" name="plugin" value="" id="tand-plugin-name">
 						<input type="hidden" name="site_url" value="<?php echo site_url( '/' ) ?>">
-						<input type="hidden" name="action" value="cx-plugin-deactivation">
-						<div class="cx-plugin-dsm-header">
-							<h3 class="cx-heading">
+						<input type="hidden" name="action" value="tan-plugin-deactivation">
+						<div class="tan-plugin-dsm-header">
+							<h3 class="tan-heading">
 								<?php printf( __( 'We\'re so sorry to see you go, %s!', 'tanvir10' ), $user->display_name ); ?>
 							</h3>
-							<p class="cx-heading"><?php _e( 'Would you mind telling us why you are deactivating so we can improve it? 🤔', 'tanvir10' ) ?></p>
+							<p class="tan-heading"><?php _e( 'Would you mind telling us why you are deactivating so we can improve it? 🤔', 'tanvir10' ) ?></p>
 						</div>
-						<div class="cx-plugin-dsm-body">
-							<div class="cx-plugin-deactivation-reasons">
+						<div class="tan-plugin-dsm-body">
+							<div class="tan-plugin-deactivation-reasons">
 								<?php
 								foreach ( $this->get_reasons() as $key => $label ) {
 									echo "
-									<div class='cx-plugin-deactivation-reason'>
+									<div class='tan-plugin-deactivation-reason'>
 										<label for='{$key}'>{$label}</label>
 										<input type='checkbox' name='reason[]' value='{$key}' id='{$key}'>
 									</div>
@@ -97,22 +97,22 @@ class Deactivator extends Base {
 								}
 								?>
 							</div>
-							<div class="cx-plugin-dsm-reason-details">
-								<textarea class="cx-plugin-dsm-reason-details-input" name="explanation" rows="5" placeholder="Please Explain"></textarea>
+							<div class="tan-plugin-dsm-reason-details">
+								<textarea class="tan-plugin-dsm-reason-details-input" name="explanation" rows="5" placeholder="Please Explain"></textarea>
 							</div>
 						</div>
-						<div class="cx-plugin-dsm-footer">
-							<a href="" class="button cx-plugin-dsm-skip-btn"><?php _e( 'Skip & Deactivate', 'tanvir10' ) ?></a>
-							<div class="cx-plugin-dsm-submit">
-								<button class="button cx-plugin-dsm-btn cx-plugin-dsm-close"><?php _e( 'Cancel', 'tanvir10' ) ?></button>
+						<div class="tan-plugin-dsm-footer">
+							<a href="" class="button tan-plugin-dsm-skip-btn"><?php _e( 'Skip & Deactivate', 'tanvir10' ) ?></a>
+							<div class="tan-plugin-dsm-submit">
+								<button class="button tan-plugin-dsm-btn tan-plugin-dsm-close"><?php _e( 'Cancel', 'tanvir10' ) ?></button>
 								&nbsp;
-								<button class="button button-primary cx-plugin-dsm-btn cx-plugin-dsm-submit" type="submit"><?php _e( 'Submit & Deactivate', 'tanvir10' ) ?></button>
+								<button class="button button-primary tan-plugin-dsm-btn tan-plugin-dsm-submit" type="submit"><?php _e( 'Submit & Deactivate', 'tanvir10' ) ?></button>
 							</div>
 						</div>
 					</form>
 				</div>
-				<div class="cx-plugin-deactivation-survey-img">
-					<p class="cx-desc cx-consent-label" data-desc="<?php _e( 'It includes your name, email, site URL and the input you give here.', 'tanvir10' ); ?>"><?php _e( 'What data we collect', 'tanvir10' ); ?></p>
+				<div class="tan-plugin-deactivation-survey-img">
+					<p class="tan-desc tan-consent-label" data-desc="<?php _e( 'It includes your name, email, site URL and the input you give here.', 'tanvir10' ); ?>"><?php _e( 'What data we collect', 'tanvir10' ); ?></p>
 					<img src="<?php echo plugins_url( 'assets/img/sorry.webp', __FILE__ ); ?>">
 
 				</div>
@@ -152,6 +152,6 @@ class Deactivator extends Base {
 			'others'				=> 'Others',
 		];
 
-		return apply_filters( "cx-plugin-deactivation-reasons", $reasons, $this->slug );
+		return apply_filters( "tan-plugin-deactivation-reasons", $reasons, $this->slug );
 	}
 }

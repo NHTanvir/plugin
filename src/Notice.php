@@ -42,7 +42,7 @@ class Notice extends Base {
 
 	public function collect() {
 
-		global $cx_notices;
+		global $tan_notices;
 
 		if( isset( $this->plugin['min_wp'] ) && version_compare( get_bloginfo( 'version' ), $this->plugin['min_wp'], '<' ) ) {
 			$notice = '<p>' . sprintf( __( '<strong>%s</strong> requires <i>WordPress version %s</i> or higher. You have <i>version %s</i> installed.', 'tanvir10' ), $this->name, $this->plugin['min_wp'], get_bloginfo( 'version' ) ) . '</p>';
@@ -80,16 +80,16 @@ class Notice extends Base {
 
 	public function print() {
 
-		if( did_action( 'cx-notice' ) || ! current_user_can( 'manage_options' ) ) return;
-		do_action( 'cx-notice' );
+		if( did_action( 'tan-notice' ) || ! current_user_can( 'manage_options' ) ) return;
+		do_action( 'tan-notice' );
 
-		global $cx_notices;
+		global $tan_notices;
 
-		if( is_array( $cx_notices ) && count( $cx_notices ) ) {
-			foreach( $cx_notices as $notice ) {
+		if( is_array( $tan_notices ) && count( $tan_notices ) ) {
+			foreach( $tan_notices as $notice ) {
 				$is_dismissible = isset( $notice['dismissible'] ) && $notice['dismissible'] ? ' is-dismissible': '';
 				echo "
-					<div class='notice notice-{$notice['type']}{$is_dismissible} cx-notice cx-shadow'>
+					<div class='notice notice-{$notice['type']}{$is_dismissible} tan-notice tan-shadow'>
 						" . $notice['text'] . "
 					</div>
 				";
@@ -98,9 +98,9 @@ class Notice extends Base {
 	}
 
 	public static function add( $text = '', $type = 'error', $dismissible = false )  {
-		global $cx_notices;
+		global $tan_notices;
 
-		$cx_notices[] = [
+		$tan_notices[] = [
 			'text'			=> $text,
 			'type'			=> $type,
 			'dismissible'	=> $dismissible,

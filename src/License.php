@@ -127,7 +127,7 @@ class License {
 		if( did_action( "_license_{$this->slug}_notice" ) ) return;
 		do_action( "_license_{$this->slug}_notice" );
 
-		global $cx_notices;
+		global $tan_notices;
 
 		// not activated
 		if( ! $this->_is_activated() ) {
@@ -164,9 +164,9 @@ class License {
 			$activation_url = $this->get_activation_url();
 			$activate_label	= apply_filters( "{$this->slug}_activate_label", __( 'Activate', 'tanvir10' ), $this->plugin );
 
-			$html .= '<p class="cx-desc">' . sprintf( __( 'Thanks for installing <strong>%1$s</strong> 👋', 'tanvir10' ), $this->name ) . '</p>';
-			$html .= '<p class="cx-desc">' . __( 'In order to make the plugin work, you need to activate the license by clicking the button below. Please reach out to us if you need any help.', 'tanvir10' ) . '</p>';
-			$html .= "<a id='cx-activate' class='cx-button button button-primary' href='{$activation_url}'>" . $activate_label . "</a>";
+			$html .= '<p class="tan-desc">' . sprintf( __( 'Thanks for installing <strong>%1$s</strong> 👋', 'tanvir10' ), $this->name ) . '</p>';
+			$html .= '<p class="tan-desc">' . __( 'In order to make the plugin work, you need to activate the license by clicking the button below. Please reach out to us if you need any help.', 'tanvir10' ) . '</p>';
+			$html .= "<a id='tan-activate' class='tan-button button button-primary' href='{$activation_url}'>" . $activate_label . "</a>";
 		}
 
 		else {
@@ -174,25 +174,25 @@ class License {
 			$deactivate_label	= apply_filters( "{$this->slug}_deactivate_label", __( 'Deactivate', 'tanvir10' ), $this->plugin );
 			$license_meta		= get_option( $this->get_license_meta_name() );
 			
-			$html .= '<p class="cx-desc">' . sprintf( __( 'Congratulations! Your license for <strong>%s</strong> is activated. 🎉', 'tanvir10' ), $this->name ) . '</p>';
+			$html .= '<p class="tan-desc">' . sprintf( __( 'Congratulations! Your license for <strong>%s</strong> is activated. 🎉', 'tanvir10' ), $this->name ) . '</p>';
 			
 			
 			if( isset( $license_meta->customer_name ) ) {
-				$html .= '<p class="cx-info">' . sprintf( __( 'Name: %s', 'tanvir10' ), $license_meta->customer_name ) . '</p>';
+				$html .= '<p class="tan-info">' . sprintf( __( 'Name: %s', 'tanvir10' ), $license_meta->customer_name ) . '</p>';
 			}
 
 			if( isset( $license_meta->customer_email ) ) {
-				$html .= '<p class="cx-info">' . sprintf( __( 'Email: %s', 'tanvir10' ), $license_meta->customer_email ) . '</p>';
+				$html .= '<p class="tan-info">' . sprintf( __( 'Email: %s', 'tanvir10' ), $license_meta->customer_email ) . '</p>';
 			}
 
 			if( isset( $license_meta->payment_id ) ) {
-				$html .= '<p class="cx-info">' . sprintf( __( 'Order ID: %s', 'tanvir10' ), $license_meta->payment_id ) . '</p>';
+				$html .= '<p class="tan-info">' . sprintf( __( 'Order ID: %s', 'tanvir10' ), $license_meta->payment_id ) . '</p>';
 			}
 
-			$html .= '<p class="cx-info">' . sprintf( __( 'Expiry: %s', 'tanvir10' ), $this->get_license_expiry() ) . '</p>';
+			$html .= '<p class="tan-info">' . sprintf( __( 'Expiry: %s', 'tanvir10' ), $this->get_license_expiry() ) . '</p>';
 
-			$html .= '<p class="cx-info">' . __( 'You can deactivate the license by clicking the button below.', 'tanvir10' ) . '</p>';
-			$html .= "<a id='cx-deactivate' class='cx-button button button-secondary' href='{$deactivation_url}'>" . $deactivate_label . "</a>";
+			$html .= '<p class="tan-info">' . __( 'You can deactivate the license by clicking the button below.', 'tanvir10' ) . '</p>';
+			$html .= "<a id='tan-deactivate' class='tan-button button button-secondary' href='{$deactivation_url}'>" . $deactivate_label . "</a>";
 		}
 
 		return apply_filters( "{$this->slug}_activation_form", $html, $this->plugin );

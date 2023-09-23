@@ -1,5 +1,5 @@
 jQuery(function($){
-	$('.cx-license-btn').click(function(e){
+	$('.tan-license-btn').click(function(e){
 		e.preventDefault()
 		var $this = $(this)
 		var btn = $this.val()

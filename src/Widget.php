@@ -42,14 +42,14 @@ class Widget extends Base {
 	 * @since 1.0
 	 */
 	public function dashboard_widget() {
-		wp_add_dashboard_widget( 'cx-overview', __( 'WordPress Blogs & Tutorials', 'cx-plugin' ), [ $this, 'callback_dashboard_widget' ] );
+		wp_add_dashboard_widget( 'tan-overview', __( 'WordPress Blogs & Tutorials', 'tan-plugin' ), [ $this, 'callback_dashboard_widget' ] );
 
 		// Move our widget to top.
 		global $wp_meta_boxes;
 
 		$dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
 		$ours = [
-			'cx-overview' => $dashboard['cx-overview'],
+			'tan-overview' => $dashboard['tan-overview'],
 		];
 
 		$wp_meta_boxes['dashboard']['normal']['core'] = array_merge( $ours, $dashboard );
@@ -65,24 +65,24 @@ class Widget extends Base {
 	public function callback_dashboard_widget() {
 		$utm = [ 'utm_source' => 'dashboard', 'utm_medium' => 'metabox', 'utm_campaign' => 'blog-post' ];
 		
-		echo '<ul id="cx-posts"></ul>'; // populated with React
+		echo '<ul id="tan-posts"></ul>'; // populated with React
 
-		$_links = apply_filters( 'cx-overview_links', [
+		$_links = apply_filters( 'tan-overview_links', [
 			'products'	=> [
 				'url'		=> add_query_arg( $utm, 'https://tanvir10.io/products/' ),
-				'label'		=> __( 'Our Plugins', 'cx-plugin' ),
+				'label'		=> __( 'Our Plugins', 'tan-plugin' ),
 				'target'	=> '_blank',
 			],
 			'hire'	=> [
 				'url'		=> add_query_arg( $utm, 'https://tanvir10.io/blog/' ),
-				'label'		=> __( 'Blog', 'cx-plugin' ),
+				'label'		=> __( 'Blog', 'tan-plugin' ),
 				'target'	=> '_blank',
 			],
 		] );
 
 		$footer_links = [];
 		foreach ( $_links as $id => $link ) {
-			$_has_icon = ( $link['target'] == '_blank' ) ? '<span class="screen-reader-text">' . __( '(opens in a new tab)', 'cx-plugin' ) . '</span> <span aria-hidden="true" class="dashicons dashicons-external"></span>' : '';
+			$_has_icon = ( $link['target'] == '_blank' ) ? '<span class="screen-reader-text">' . __( '(opens in a new tab)', 'tan-plugin' ) . '</span> <span aria-hidden="true" class="dashicons dashicons-external"></span>' : '';
 
 			$footer_links[] = "<a href='{$link['url']}' target='{$link['target']}'>{$link['label']}{$_has_icon}</a>";
 		}

@@ -29,7 +29,7 @@ class Metabox extends Fields {
 
 		// default values
 		$defaults = [
-			'id'			=> 'cx-metabox',
+			'id'			=> 'tan-metabox',
 			'label'			=> __( 'Metabox' ),
 			'post_type'		=> [ 'post', 'page' ],
 			'context'		=> 'normal',
@@ -37,8 +37,8 @@ class Metabox extends Fields {
 			'sections'		=> [],
 		];
 
-		$this->config = wp_parse_args( apply_filters( 'cx-metabox-args', $args ), $defaults );
-		$this->sections	= apply_filters( 'cx-metabox-sections', $this->config['sections'] );
+		$this->config = wp_parse_args( apply_filters( 'tan-metabox-args', $args ), $defaults );
+		$this->sections	= apply_filters( 'tan-metabox-sections', $this->config['sections'] );
 
 		parent::hooks();
 		self::hooks();

@@ -128,7 +128,7 @@ class Feature extends Base {
 			}
 		}
 
-		if ( isset( $res->plugins ) && is_array( $res->plugins ) && $plugin_info = get_transient( 'cx-plugin-info-' . $plugin_slug ) ) {
+		if ( isset( $res->plugins ) && is_array( $res->plugins ) && $plugin_info = get_transient( 'tan-plugin-info-' . $plugin_slug ) ) {
 			array_unshift( $res->plugins, $plugin_info );
 		}
 		else {
@@ -147,7 +147,7 @@ class Feature extends Base {
 
 			if ( ! is_wp_error( $plugin_info ) ) {
 				$res->plugins[] = $plugin_info;
-				set_transient( 'cx-plugin-info-' . $plugin_slug, $plugin_info, DAY_IN_SECONDS * 7 );
+				set_transient( 'tan-plugin-info-' . $plugin_slug, $plugin_info, DAY_IN_SECONDS * 7 );
 			}
 		}
 
