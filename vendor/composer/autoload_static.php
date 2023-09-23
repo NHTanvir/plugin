@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9d6af050f0e6e86420d25ea3c3afe16f
+class ComposerStaticInit8f7dd57d9918ba922229fb09a3387c51
 {
     public static $classMap = array (
         'Tanvir10\\Plugin\\Base' => __DIR__ . '/../..' . '/src/Base.php',
@@ -25,7 +25,7 @@ class ComposerStaticInit9d6af050f0e6e86420d25ea3c3afe16f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit9d6af050f0e6e86420d25ea3c3afe16f::$classMap;
+            $loader->classMap = ComposerStaticInit8f7dd57d9918ba922229fb09a3387c51::$classMap;
 
         }, null, ClassLoader::class);
     }
