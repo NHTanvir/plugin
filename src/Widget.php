@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 /**
  * if accessed directly, exit.
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @package Plugin
  * @subpackage Widget
- * @author Tanvir <hi@tanvir.io>
+ * @author Tanvir10 <hi@tanvir10.io>
  */
 class Widget extends Base {
 
@@ -69,12 +69,12 @@ class Widget extends Base {
 
 		$_links = apply_filters( 'cx-overview_links', [
 			'products'	=> [
-				'url'		=> add_query_arg( $utm, 'https://tanvir.io/products/' ),
+				'url'		=> add_query_arg( $utm, 'https://tanvir10.io/products/' ),
 				'label'		=> __( 'Our Plugins', 'cx-plugin' ),
 				'target'	=> '_blank',
 			],
 			'hire'	=> [
-				'url'		=> add_query_arg( $utm, 'https://tanvir.io/blog/' ),
+				'url'		=> add_query_arg( $utm, 'https://tanvir10.io/blog/' ),
 				'label'		=> __( 'Blog', 'cx-plugin' ),
 				'target'	=> '_blank',
 			],

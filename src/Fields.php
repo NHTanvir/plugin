@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 /**
  * if accessed directly, exit.
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @package Plugin
  * @subpackage Fields
- * @author Tanvir <hi@tanvir.io>
+ * @author Tanvir10 <hi@tanvir10.io>
  */
 abstract class Fields extends Base {
 
@@ -44,8 +44,8 @@ abstract class Fields extends Base {
         	wp_enqueue_script( 'chosen' );
         }
 
-        wp_enqueue_style( 'tanvir-product-fields', plugins_url( 'assets/css/fields.css', __FILE__ ), [], '' );
-        wp_enqueue_script( 'tanvir-product-fields', plugins_url( 'assets/js/fields.js', __FILE__ ), [ 'jquery' ], '', true );
+        wp_enqueue_style( 'tanvir10-product-fields', plugins_url( 'assets/css/fields.css', __FILE__ ), [], '' );
+        wp_enqueue_script( 'tanvir10-product-fields', plugins_url( 'assets/js/fields.js', __FILE__ ), [ 'jquery' ], '', true );
     }
 
 	public function callback_head() {

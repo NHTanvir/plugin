@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 /**
  * if accessed directly, exit.
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @package Plugin
  * @subpackage Survey
- * @author Tanvir <hi@tanvir.io>
+ * @author Tanvir10 <hi@tanvir10.io>
  */
 class Survey extends Base {
 	
@@ -31,11 +31,11 @@ class Survey extends Base {
 		$this->server 	= $this->plugin['server'];
 		$this->slug 	= $this->plugin['TextDomain'];
 		$this->name = $this->plugin['Name'];
-		$this->api_url = "{$this->server}/wp-json/tanvir-lead/v1.0/";
+		$this->api_url = "{$this->server}/wp-json/tanvir10-lead/v1.0/";
 		
-		$this->notice_heading = '<h3>' . sprintf( __( 'Thanks for using \'<strong>%s</strong>\'', 'tanvir' ), $this->name ) . '</h3>';
-		$this->notice_message = '<p> ' . __( 'We want to know what type of sites use this plugin. Users\' satisfaction is our first priority and we\'re continuously working on it. This is why we need some information so that we can improve it even more.<br />Help us with your site URL and a few basic information. It doesn\'t include your password or any secret data. Would you like to help us?', 'tanvir' ) . '</p>';
-		$this->notice_button_text = __( 'Okay. Don\'t bother me again!', 'tanvir' );
+		$this->notice_heading = '<h3>' . sprintf( __( 'Thanks for using \'<strong>%s</strong>\'', 'tanvir10' ), $this->name ) . '</h3>';
+		$this->notice_message = '<p> ' . __( 'We want to know what type of sites use this plugin. Users\' satisfaction is our first priority and we\'re continuously working on it. This is why we need some information so that we can improve it even more.<br />Help us with your site URL and a few basic information. It doesn\'t include your password or any secret data. Would you like to help us?', 'tanvir10' ) . '</p>';
+		$this->notice_button_text = __( 'Okay. Don\'t bother me again!', 'tanvir10' );
 
 		self::hooks();
 	}
@@ -136,8 +136,8 @@ class Survey extends Base {
 	}
 
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'tanvir-product-survey', plugins_url( 'assets/css/survey.css', __FILE__ ), [], $this->plugin['Version'] );
-		wp_enqueue_script( 'tanvir-product-survey', plugins_url( 'assets/js/survey.js', __FILE__ ), [ 'jquery' ], $this->plugin['Version'], true );
+		wp_enqueue_style( 'tanvir10-product-survey', plugins_url( 'assets/css/survey.css', __FILE__ ), [], $this->plugin['Version'] );
+		wp_enqueue_script( 'tanvir10-product-survey', plugins_url( 'assets/js/survey.js', __FILE__ ), [ 'jquery' ], $this->plugin['Version'], true );
 	}
 
     /**

@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -164,7 +164,7 @@ class Update {
 	public function plugin_row_meta( $plugin_meta, $plugin_file ) {
 		
 		if ( $this->basename === $plugin_file ) {
-			$plugin_meta['check'] = '<a href="' . add_query_arg( 'cx-recheck', $this->slug, admin_url( 'plugins.php' ) ) . '">' . __( 'Check for update', 'tanvir' ) . '</a>';
+			$plugin_meta['check'] = '<a href="' . add_query_arg( 'cx-recheck', $this->slug, admin_url( 'plugins.php' ) ) . '">' . __( 'Check for update', 'tanvir10' ) . '</a>';
 		}
 
 		return $plugin_meta;

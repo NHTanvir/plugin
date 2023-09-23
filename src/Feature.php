@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 /**
  * if accessed directly, exit.
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @package Plugin
  * @subpackage Feature
- * @author Tanvir <hi@tanvir.io>
+ * @author Tanvir10 <hi@tanvir10.io>
  */
 class Feature extends Base {
 	

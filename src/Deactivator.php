@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 /**
  * if accessed directly, exit.
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @package Plugin
  * @subpackage Deactivator
- * @author Tanvir <hi@tanvir.io>
+ * @author Tanvir10 <hi@tanvir10.io>
  */
 class Deactivator extends Base {
 
@@ -80,9 +80,9 @@ class Deactivator extends Base {
 						<input type="hidden" name="action" value="cx-plugin-deactivation">
 						<div class="cx-plugin-dsm-header">
 							<h3 class="cx-heading">
-								<?php printf( __( 'We\'re so sorry to see you go, %s!', 'tanvir' ), $user->display_name ); ?>
+								<?php printf( __( 'We\'re so sorry to see you go, %s!', 'tanvir10' ), $user->display_name ); ?>
 							</h3>
-							<p class="cx-heading"><?php _e( 'Would you mind telling us why you are deactivating so we can improve it? 🤔', 'tanvir' ) ?></p>
+							<p class="cx-heading"><?php _e( 'Would you mind telling us why you are deactivating so we can improve it? 🤔', 'tanvir10' ) ?></p>
 						</div>
 						<div class="cx-plugin-dsm-body">
 							<div class="cx-plugin-deactivation-reasons">
@@ -102,17 +102,17 @@ class Deactivator extends Base {
 							</div>
 						</div>
 						<div class="cx-plugin-dsm-footer">
-							<a href="" class="button cx-plugin-dsm-skip-btn"><?php _e( 'Skip & Deactivate', 'tanvir' ) ?></a>
+							<a href="" class="button cx-plugin-dsm-skip-btn"><?php _e( 'Skip & Deactivate', 'tanvir10' ) ?></a>
 							<div class="cx-plugin-dsm-submit">
-								<button class="button cx-plugin-dsm-btn cx-plugin-dsm-close"><?php _e( 'Cancel', 'tanvir' ) ?></button>
+								<button class="button cx-plugin-dsm-btn cx-plugin-dsm-close"><?php _e( 'Cancel', 'tanvir10' ) ?></button>
 								&nbsp;
-								<button class="button button-primary cx-plugin-dsm-btn cx-plugin-dsm-submit" type="submit"><?php _e( 'Submit & Deactivate', 'tanvir' ) ?></button>
+								<button class="button button-primary cx-plugin-dsm-btn cx-plugin-dsm-submit" type="submit"><?php _e( 'Submit & Deactivate', 'tanvir10' ) ?></button>
 							</div>
 						</div>
 					</form>
 				</div>
 				<div class="cx-plugin-deactivation-survey-img">
-					<p class="cx-desc cx-consent-label" data-desc="<?php _e( 'It includes your name, email, site URL and the input you give here.', 'tanvir' ); ?>"><?php _e( 'What data we collect', 'tanvir' ); ?></p>
+					<p class="cx-desc cx-consent-label" data-desc="<?php _e( 'It includes your name, email, site URL and the input you give here.', 'tanvir10' ); ?>"><?php _e( 'What data we collect', 'tanvir10' ); ?></p>
 					<img src="<?php echo plugins_url( 'assets/img/sorry.webp', __FILE__ ); ?>">
 
 				</div>

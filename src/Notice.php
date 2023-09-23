@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 /**
  * if accessed directly, exit.
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @package Plugin
  * @subpackage Notice
- * @author Tanvir <hi@tanvir.io>
+ * @author Tanvir10 <hi@tanvir10.io>
  */
 class Notice extends Base {
 	
@@ -37,7 +37,7 @@ class Notice extends Base {
 	}
 
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'tanvir-product-notice', plugins_url( 'assets/css/notice.css', __FILE__ ), [], $this->plugin['Version'] );
+		wp_enqueue_style( 'tanvir10-product-notice', plugins_url( 'assets/css/notice.css', __FILE__ ), [], $this->plugin['Version'] );
 	}
 
 	public function collect() {
@@ -45,12 +45,12 @@ class Notice extends Base {
 		global $cx_notices;
 
 		if( isset( $this->plugin['min_wp'] ) && version_compare( get_bloginfo( 'version' ), $this->plugin['min_wp'], '<' ) ) {
-			$notice = '<p>' . sprintf( __( '<strong>%s</strong> requires <i>WordPress version %s</i> or higher. You have <i>version %s</i> installed.', 'tanvir' ), $this->name, $this->plugin['min_wp'], get_bloginfo( 'version' ) ) . '</p>';
+			$notice = '<p>' . sprintf( __( '<strong>%s</strong> requires <i>WordPress version %s</i> or higher. You have <i>version %s</i> installed.', 'tanvir10' ), $this->name, $this->plugin['min_wp'], get_bloginfo( 'version' ) ) . '</p>';
 			self::add( $notice );
 		}
 
 		if( isset( $this->plugin['min_php'] ) && version_compare( PHP_VERSION, $this->plugin['min_php'], '<' ) ) {
-			$notice = '<p>' . sprintf( __( '<strong>%s</strong> requires <i>PHP version %s</i> or higher. You have <i>version %s</i> installed.', 'tanvir' ), $this->name, $this->plugin['min_php'], PHP_VERSION ) . '</p>';
+			$notice = '<p>' . sprintf( __( '<strong>%s</strong> requires <i>PHP version %s</i> or higher. You have <i>version %s</i> installed.', 'tanvir10' ), $this->name, $this->plugin['min_php'], PHP_VERSION ) . '</p>';
 			self::add( $notice );
 		}
 
@@ -66,10 +66,10 @@ class Notice extends Base {
 			if( !in_array( $plugin, $active_plugins ) ) {
 
 				$action_links = $this->_action_links( $plugin );
-				$button_text = array_key_exists( $plugin, $installed_plugins ) ? __( 'Activate', 'tanvir' ) : __( 'Install', 'tanvir' );
+				$button_text = array_key_exists( $plugin, $installed_plugins ) ? __( 'Activate', 'tanvir10' ) : __( 'Install', 'tanvir10' );
 				$action_link = array_key_exists( $plugin, $installed_plugins ) ? $action_links['activate'] : $action_links['install'];
 			
-				$notice = '<p>' . sprintf( __( '<strong>ALERT:</strong> In order to <strong>%1$s</strong> run properly, <strong>%2$s</strong> needs to be activated. <a href="%3$s">%4$s %2$s Now</a>.', 'tanvir' ), $this->name, $plugin_name, $action_link, $button_text ) . '</p>';
+				$notice = '<p>' . sprintf( __( '<strong>ALERT:</strong> In order to <strong>%1$s</strong> run properly, <strong>%2$s</strong> needs to be activated. <a href="%3$s">%4$s %2$s Now</a>.', 'tanvir10' ), $this->name, $plugin_name, $action_link, $button_text ) . '</p>';
 				
 				self::add( $notice, 'error', true );
 			}

@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 /**
  * if accessed directly, exit.
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @package Plugin
  * @subpackage License
- * @author Tanvir <hi@tanvir.io>
+ * @author Tanvir10 <hi@tanvir10.io>
  */
 class License {
 	
@@ -47,7 +47,7 @@ class License {
 
 	public function hooks() {
 		register_activation_hook( __FILE__, [ $this, 'install' ] );
-		add_action( 'tanvir-daily', [ $this, 'validate' ] );
+		add_action( 'tanvir10-daily', [ $this, 'validate' ] );
 		add_action( 'admin_init', [ $this, 'init' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ], 99 );
 		add_action( 'plugins_loaded', [ $this, 'gather_notices' ] );
@@ -63,8 +63,8 @@ class License {
 		/**
 		 * Schedule an event to sync help docs
 		 */
-		if ( ! wp_next_scheduled ( 'tanvir-daily' )) {
-		    wp_schedule_event( time(), 'daily', 'tanvir-daily' );
+		if ( ! wp_next_scheduled ( 'tanvir10-daily' )) {
+		    wp_schedule_event( time(), 'daily', 'tanvir10-daily' );
 		}
 	}
 
@@ -91,7 +91,7 @@ class License {
 		if( !isset( $_GET['pb-license'] ) ) return;
 
 		if( $_GET['pb-license'] == 'deactivate' ) {
-			if( ! wp_verify_nonce( $_GET['pb-nonce'], 'tanvir' ) ) {
+			if( ! wp_verify_nonce( $_GET['pb-nonce'], 'tanvir10' ) ) {
 				// print an error message. maybe store in a temporary session and print later?
 			}
 			else {
@@ -100,7 +100,7 @@ class License {
 		}
 
 		elseif( $_GET['pb-license'] == 'activate' ) {
-			if( ! wp_verify_nonce( $_GET['pb-nonce'], 'tanvir' ) || $_GET['key'] == '' ) {
+			if( ! wp_verify_nonce( $_GET['pb-nonce'], 'tanvir10' ) || $_GET['key'] == '' ) {
 				// print an error message. maybe store in a temporary session and print later?
 			}
 			else {
@@ -119,7 +119,7 @@ class License {
 	}
 
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'tanvir-product-license', plugins_url( 'assets/css/license.css', __FILE__ ), [], $this->plugin['Version'] );
+		wp_enqueue_style( 'tanvir10-product-license', plugins_url( 'assets/css/license.css', __FILE__ ), [], $this->plugin['Version'] );
 	}
 
 	public function gather_notices() {
@@ -133,25 +133,25 @@ class License {
 		if( ! $this->_is_activated() ) {
 
 			$notice = '';
-			$notice .= '<p>' . sprintf( __( '<strong>ALERT:</strong> In order to enjoy the features of <strong>%1$s</strong>, you need to activate the license first. Sorry, but the plugin won\'t work without activation! Please <a href="%2$s">activate it now</a>.', 'tanvir' ), $this->name, $this->get_activation_url() ) . '</p>';
+			$notice .= '<p>' . sprintf( __( '<strong>ALERT:</strong> In order to enjoy the features of <strong>%1$s</strong>, you need to activate the license first. Sorry, but the plugin won\'t work without activation! Please <a href="%2$s">activate it now</a>.', 'tanvir10' ), $this->name, $this->get_activation_url() ) . '</p>';
 
 			Notice::add( $notice, 'error', true );
 		}
 
 		// about to expire?
-		if( $this->_is_activated() && ( time() + apply_filters( 'tanvir-expiry-notice-time', MONTH_IN_SECONDS, $this ) ) > ( $expiry = get_option( $this->get_license_expiry_name() ) ) && time() < $expiry ) {
+		if( $this->_is_activated() && ( time() + apply_filters( 'tanvir10-expiry-notice-time', MONTH_IN_SECONDS, $this ) ) > ( $expiry = get_option( $this->get_license_expiry_name() ) ) && time() < $expiry ) {
 
 			$notice = '';
-			$notice .= '<p>' . sprintf( __( '<strong>ALERT:</strong> Your license for <strong>%1$s</strong> is about to expire in <strong>%2$s</strong>. The plugin will stop working without a valid license key. <a href="%3$s">Renew your license</a> now and get a special <strong>%4$s discount</strong>!', 'tanvir' ), $this->name, human_time_diff( $expiry, time() ), $this->get_renewal_url(), '20%' ) . '</p>';
+			$notice .= '<p>' . sprintf( __( '<strong>ALERT:</strong> Your license for <strong>%1$s</strong> is about to expire in <strong>%2$s</strong>. The plugin will stop working without a valid license key. <a href="%3$s">Renew your license</a> now and get a special <strong>%4$s discount</strong>!', 'tanvir10' ), $this->name, human_time_diff( $expiry, time() ), $this->get_renewal_url(), '20%' ) . '</p>';
 
 			Notice::add( $notice, 'error', true );
 		}
 
 		// expired to invalid license?
-		if( $this->_is_activated() && ( $this->_is_invalid() || $this->_is_expired() ) && apply_filters( 'tanvir-show_validation_notice', true, $this->plugin ) ) {
+		if( $this->_is_activated() && ( $this->_is_invalid() || $this->_is_expired() ) && apply_filters( 'tanvir10-show_validation_notice', true, $this->plugin ) ) {
 
 			$notice = '';
-			$notice .= '<p>' . sprintf( __( '<strong>WARNING:</strong> It looks like <strong>%1$s</strong> can\'t connect to our server and is unable to receive updates! The plugin might stop working if it\'s not connected. <a href="%2$s">Reconnect Now</a>.', 'tanvir' ), $this->name, $this->get_deactivation_url() ) . '</p>';
+			$notice .= '<p>' . sprintf( __( '<strong>WARNING:</strong> It looks like <strong>%1$s</strong> can\'t connect to our server and is unable to receive updates! The plugin might stop working if it\'s not connected. <a href="%2$s">Reconnect Now</a>.', 'tanvir10' ), $this->name, $this->get_deactivation_url() ) . '</p>';
 
 			Notice::add( $notice, 'warning', true );
 		}
@@ -162,36 +162,36 @@ class License {
 
 		if( ! $this->_is_activated() ) {
 			$activation_url = $this->get_activation_url();
-			$activate_label	= apply_filters( "{$this->slug}_activate_label", __( 'Activate', 'tanvir' ), $this->plugin );
+			$activate_label	= apply_filters( "{$this->slug}_activate_label", __( 'Activate', 'tanvir10' ), $this->plugin );
 
-			$html .= '<p class="cx-desc">' . sprintf( __( 'Thanks for installing <strong>%1$s</strong> 👋', 'tanvir' ), $this->name ) . '</p>';
-			$html .= '<p class="cx-desc">' . __( 'In order to make the plugin work, you need to activate the license by clicking the button below. Please reach out to us if you need any help.', 'tanvir' ) . '</p>';
+			$html .= '<p class="cx-desc">' . sprintf( __( 'Thanks for installing <strong>%1$s</strong> 👋', 'tanvir10' ), $this->name ) . '</p>';
+			$html .= '<p class="cx-desc">' . __( 'In order to make the plugin work, you need to activate the license by clicking the button below. Please reach out to us if you need any help.', 'tanvir10' ) . '</p>';
 			$html .= "<a id='cx-activate' class='cx-button button button-primary' href='{$activation_url}'>" . $activate_label . "</a>";
 		}
 
 		else {
 			$deactivation_url	= $this->get_deactivation_url();
-			$deactivate_label	= apply_filters( "{$this->slug}_deactivate_label", __( 'Deactivate', 'tanvir' ), $this->plugin );
+			$deactivate_label	= apply_filters( "{$this->slug}_deactivate_label", __( 'Deactivate', 'tanvir10' ), $this->plugin );
 			$license_meta		= get_option( $this->get_license_meta_name() );
 			
-			$html .= '<p class="cx-desc">' . sprintf( __( 'Congratulations! Your license for <strong>%s</strong> is activated. 🎉', 'tanvir' ), $this->name ) . '</p>';
+			$html .= '<p class="cx-desc">' . sprintf( __( 'Congratulations! Your license for <strong>%s</strong> is activated. 🎉', 'tanvir10' ), $this->name ) . '</p>';
 			
 			
 			if( isset( $license_meta->customer_name ) ) {
-				$html .= '<p class="cx-info">' . sprintf( __( 'Name: %s', 'tanvir' ), $license_meta->customer_name ) . '</p>';
+				$html .= '<p class="cx-info">' . sprintf( __( 'Name: %s', 'tanvir10' ), $license_meta->customer_name ) . '</p>';
 			}
 
 			if( isset( $license_meta->customer_email ) ) {
-				$html .= '<p class="cx-info">' . sprintf( __( 'Email: %s', 'tanvir' ), $license_meta->customer_email ) . '</p>';
+				$html .= '<p class="cx-info">' . sprintf( __( 'Email: %s', 'tanvir10' ), $license_meta->customer_email ) . '</p>';
 			}
 
 			if( isset( $license_meta->payment_id ) ) {
-				$html .= '<p class="cx-info">' . sprintf( __( 'Order ID: %s', 'tanvir' ), $license_meta->payment_id ) . '</p>';
+				$html .= '<p class="cx-info">' . sprintf( __( 'Order ID: %s', 'tanvir10' ), $license_meta->payment_id ) . '</p>';
 			}
 
-			$html .= '<p class="cx-info">' . sprintf( __( 'Expiry: %s', 'tanvir' ), $this->get_license_expiry() ) . '</p>';
+			$html .= '<p class="cx-info">' . sprintf( __( 'Expiry: %s', 'tanvir10' ), $this->get_license_expiry() ) . '</p>';
 
-			$html .= '<p class="cx-info">' . __( 'You can deactivate the license by clicking the button below.', 'tanvir' ) . '</p>';
+			$html .= '<p class="cx-info">' . __( 'You can deactivate the license by clicking the button below.', 'tanvir10' ) . '</p>';
 			$html .= "<a id='cx-deactivate' class='cx-button button button-secondary' href='{$deactivation_url}'>" . $deactivate_label . "</a>";
 		}
 
@@ -204,7 +204,7 @@ class License {
 	}
 
 	public function register_endpoints() {
-		register_rest_route( 'tanvir', 'license', [
+		register_rest_route( 'tanvir10', 'license', [
 			'methods'				=> 'GET',
 			'callback'				=> [ $this, 'callback_action' ],
 			'permission_callback'	=> '__return_true'
@@ -213,7 +213,7 @@ class License {
 
 	public function callback_action( $request ) {
 		
-		add_filter( 'tanvir-is_forced', '__return_true' );
+		add_filter( 'tanvir10-is_forced', '__return_true' );
 		
 		$parameters = $request->get_params();
 		return $this->do( $parameters['action'], $parameters['license_key'], $parameters['item_name'] );
@@ -235,7 +235,7 @@ class License {
 
 		$_response = [
 			'status'	=> false,
-			'message'	=> __( 'Something is wrong', 'tanvir' ),
+			'message'	=> __( 'Something is wrong', 'tanvir10' ),
 			'data'		=> []
 		];
 
@@ -253,7 +253,7 @@ class License {
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
-			$_response['message'] = is_wp_error( $response ) ? $response->get_error_message() : __( 'An error occurred, please try again.', 'tanvir' );
+			$_response['message'] = is_wp_error( $response ) ? $response->get_error_message() : __( 'An error occurred, please try again.', 'tanvir10' );
 		}
 
 		// it's an activation request
@@ -265,7 +265,7 @@ class License {
 					case 'expired' :
 
 						$_response['message'] = sprintf(
-							__( 'Your license key expired on %s.', 'tanvir' ),
+							__( 'Your license key expired on %s.', 'tanvir10' ),
 							date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) )
 						);
 						break;
@@ -273,33 +273,33 @@ class License {
 					case 'disabled' :
 					case 'revoked' :
 
-						$_response['message'] = __( 'Your license key has been disabled.', 'tanvir' );
+						$_response['message'] = __( 'Your license key has been disabled.', 'tanvir10' );
 						break;
 
 					case 'missing' :
 
-						$_response['message'] = __( 'Invalid license.', 'tanvir' );
+						$_response['message'] = __( 'Invalid license.', 'tanvir10' );
 						break;
 
 					case 'invalid' :
 					case 'site_inactive' :
 
-						$_response['message'] = __( 'Your license is not active for this URL.', 'tanvir' );
+						$_response['message'] = __( 'Your license is not active for this URL.', 'tanvir10' );
 						break;
 
 					case 'item_name_mismatch' :
 
-						$_response['message'] = sprintf( __( 'This appears to be an invalid license key for %s.', 'tanvir' ), $item_name );
+						$_response['message'] = sprintf( __( 'This appears to be an invalid license key for %s.', 'tanvir10' ), $item_name );
 						break;
 
 					case 'no_activations_left':
 
-						$_response['message'] = __( 'Your license key has reached its activation limit.', 'tanvir' );
+						$_response['message'] = __( 'Your license key has reached its activation limit.', 'tanvir10' );
 						break;
 
 					default :
 
-						$_response['message'] = __( 'An error occurred, please try again.', 'tanvir' );
+						$_response['message'] = __( 'An error occurred, please try again.', 'tanvir10' );
 						break;
 				}
 
@@ -318,7 +318,7 @@ class License {
 				update_option( $this->get_license_meta_name(), $license_data );
 
 				$_response['status']	= $license_data;
-				$_response['message']	= __( 'License activated', 'tanvir' );
+				$_response['message']	= __( 'License activated', 'tanvir10' );
 			} 
 
 		}
@@ -337,7 +337,7 @@ class License {
 			// 	delete_option( $this->get_license_meta_name() );
 
 			// 	$_response['status']	= true;
-			// 	$_response['message'] = __( 'License deactivated', 'tanvir' );
+			// 	$_response['message'] = __( 'License deactivated', 'tanvir10' );
 			// }
 
 			// want to deactivate? do it first without validating the license
@@ -351,12 +351,12 @@ class License {
 		elseif( $action == 'check' ) {
 			if( isset( $license_data->license ) && $license_data->license == 'valid' ) {
 				$_response['status']	= true;
-				$_response['message']	= __( 'License valid', 'tanvir' );
+				$_response['message']	= __( 'License valid', 'tanvir10' );
 				$_response['data']		= $license_data;
 				update_option( $this->get_license_meta_name(), $license_data );
 			} else {
 				$_response['status']	= false;
-				$_response['message']	= __( 'License invalid', 'tanvir' );
+				$_response['message']	= __( 'License invalid', 'tanvir10' );
 			}
 		}
 
@@ -365,28 +365,28 @@ class License {
 
 	public function get_activation_url() {
 		$query					= isset( $_GET ) ? $_GET : [];
-		$query['pb-nonce']		= wp_create_nonce( 'tanvir' );
+		$query['pb-nonce']		= wp_create_nonce( 'tanvir10' );
 
 		$activation_url = add_query_arg( [
 			'item_id'	=> $this->plugin['item_id'],
 			'item_slug'	=> $this->slug,
-			'pb-nonce'	=> wp_create_nonce( 'tanvir' ),
+			'pb-nonce'	=> wp_create_nonce( 'tanvir10' ),
 			'track'		=> base64_encode( $this->license_page )
 		], trailingslashit( $this->get_activation_page() ) );
 
-		return apply_filters( 'tanvir-activation_url', $activation_url, $this->plugin );
+		return apply_filters( 'tanvir10-activation_url', $activation_url, $this->plugin );
 	}
 
 	public function get_deactivation_url() {
 		$query					= isset( $_GET ) ? $_GET : [];
 		$query['item_id']		= $this->plugin['item_id'];
 		$query['item_slug']		= $this->slug;
-		$query['pb-nonce']		= wp_create_nonce( 'tanvir' );
+		$query['pb-nonce']		= wp_create_nonce( 'tanvir10' );
 		$query['pb-license']	= 'deactivate';
 
 		$deactivation_url = add_query_arg( $query, $this->license_page );
 
-		return apply_filters( 'tanvir-deactivation_url', $deactivation_url, $this->plugin );
+		return apply_filters( 'tanvir10-deactivation_url', $deactivation_url, $this->plugin );
 	}
 
 	public function get_renewal_url() {
@@ -397,11 +397,11 @@ class License {
 
 		$renewal_url = add_query_arg( $query, trailingslashit( $this->server ) . 'order' );
 
-		return apply_filters( 'tanvir-renewal_url', $renewal_url, $this->plugin );
+		return apply_filters( 'tanvir10-renewal_url', $renewal_url, $this->plugin );
 	}
 
 	public function get_activation_page() {
-		return apply_filters( 'tanvir-activation_page', "{$this->server}/connect", $this->plugin );
+		return apply_filters( 'tanvir10-activation_page', "{$this->server}/connect", $this->plugin );
 	}
 
 	// option_key in the wp_options table
@@ -458,6 +458,6 @@ class License {
 	}
 
 	public function _is_forced() {
-		return apply_filters( 'tanvir-is_forced', ( $this->_is_invalid() || $this->_is_expired() ), $this->plugin );
+		return apply_filters( 'tanvir10-is_forced', ( $this->_is_invalid() || $this->_is_expired() ), $this->plugin );
 	}
 }

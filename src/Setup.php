@@ -1,5 +1,5 @@
 <?php
-namespace Tanvir\Plugin;
+namespace Tanvir10\Plugin;
 
 /**
  * if accessed directly, exit.
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @package Plugin
  * @subpackage Setup
- * @author Tanvir <hi@tanvir.io>
+ * @author Tanvir10 <hi@tanvir10.io>
  */
 class Setup extends Base {
 
@@ -36,7 +36,7 @@ class Setup extends Base {
 		    return;
 		}
 
-		wp_enqueue_style( 'tanvir-product-wizard', plugins_url( 'assets/css/wizard.css', __FILE__ ), [], '' );
+		wp_enqueue_style( 'tanvir10-product-wizard', plugins_url( 'assets/css/wizard.css', __FILE__ ), [], '' );
     }
 
     public function get_logo() {
